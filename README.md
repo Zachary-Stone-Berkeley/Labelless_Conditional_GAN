@@ -5,8 +5,11 @@ Typically, conditional image synthesis with a generative adversarial network (GA
 ## Prerequisites
 
 python (3.6.1)
+
 tf-nightly-gpu (1.13.0.dev20190221)
+
 numpy (1.12.1)
+
 scikit-learn (0.18.1)
 
 Note: Newer versions of scikit-learn will raise an error as it is no longer possible to pass a 1D array to one-hot encoder.

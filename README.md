@@ -32,5 +32,5 @@ where possible args are
 ```
 ## Credits
 
-The arch_ops and losses files are modified from https://github.com/google/compare_gan. 
+The arch_ops and losses files are modified from https://github.com/google/compare_gan.  
 The make_montage file used to display a collection of images as a montage follows Parag Mital's concise implementation (see github.com/pkmital/CADL). 

@@ -2,8 +2,9 @@
 
 Typically, conditional image synthesis with a generative adversarial network (GAN) is achieved by providing the generator a class label. This code implements a novel (to my knowledge) GAN loss function that allows for image synthesis conditioned on a raw input image. In detail, the GAN is provided both sampled noise and an image to condition on. The noise is up-sampled as usual while the image is down-sampled and the resulting hidden representations are concatenated. But for any standard GAN loss, the optimal generator would act as an identity function on the provided image. The solution I propose is the following loss function:
 
+<p align="center">
 ![alt text](SemiConditionalGAN/Images/results.png)
-
+</p>
 
 ## Prerequisites
 

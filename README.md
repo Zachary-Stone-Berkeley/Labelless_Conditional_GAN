@@ -30,3 +30,6 @@ where possible args are
 --show_images: Bool. If True, images on test data will be shown every 2500 updates.
 --save: Bool. If true, the model will be preiodically saved.
 ```
+## Credits
+
+The arch_ops and losses files are modified from https://github.com/google/compare_gan/tree/master/compare_gan/architectures. The make_montage file used to display a collection of images as a montage follows Parag Mital's concise implementation (see github.com/pkmital/CADL). 

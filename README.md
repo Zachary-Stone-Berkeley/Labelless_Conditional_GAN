@@ -1,10 +1,10 @@
 # Labelless Conditional GAN
 
-Typically, conditional image synthesis with a generative adversarial network (GAN) is achieved by providing the generator a class label. This code implements a novel (to my knowledge) GAN loss function that allows for image synthesis conditioned on a raw input image. In detail, the GAN is provided both sampled noise and an image to condition on. The noise is up-sampled as usual while the image is down-sampled and the resulting hidden representations are concatenated. But for any standard GAN loss, the optimal generator would act as an identity function on the provided image. The solution I propose is the following loss function:
-  
+Typically, conditional image synthesis with a generative adversarial network (GAN) is achieved by providing the generator a class label. This code implements a novel (to my knowledge) GAN loss function that allows for image synthesis conditioned on a raw input image. In detail, the GAN is provided both sampled noise and an image to condition on. The noise is up-sampled as usual while the image is down-sampled and the resulting hidden representations are concatenated. But for any standard GAN loss, if the generator is provided a real sample, it will simply output the provided sample unless the downsampling removes enough important bits. As such, consider the following modification to a hinge loss,  
 
 ![alt text](SemiConditionalGAN/Images/loss.gif)
 
+Instead of evaluating the discriminator and real and fake data, the discriminator receives either the residual between the generator's output and its provided sample to condition on, or the residual between two random samples of the same class. When the generator is acting as an identity function, the discriminator sees a very clear signal, since the residual will be zero. Below is a sample of input images to the generator, and corrosponding output images, where the generator was trained for 10000 updates.
   
 ![alt text](SemiConditionalGAN/Images/results.png)
 
